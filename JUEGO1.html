@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JUEGO 1</title>
+  <link href="JUEGO1.css" rel="stylesheet" type="text/css"> <!-- CSS -->
+  <script type="text/javascript" defer src='JUEGO1.js'></script> <!-- JS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- COMPATIBILIDAD CON MÓVILES -->
+</head>
+
+
+<body>
+  <!----- CINEMATICA ----->
+  
+  <div id="cinematica">
+    <!--LORE -->
+    <p id="textoCinematica">Es sábado, y todos los sábados Francisco Javier va al supermercado a hacer la compra...</p>
+
+    <!--IMAGENES -->
+    <img src="MULTIMEDIA/FOTOS/J1_1.png" id="foto1" class="fotoCinematica">
+    <img src="MULTIMEDIA/FOTOS/J1_2.png" id="foto2" class="fotoCinematica">
+    <img src="MULTIMEDIA/FOTOS/J1_3.png" id="foto3" class="fotoCinematica">
+    <img src="MULTIMEDIA/FOTOS/J1_4.png" id="foto4" class="fotoCinematica">
+
+    <!--BOTÓN SIGUIENTE FOTO -->
+    <button id="J1_boton1" onclick="J1_cinematica()">Siguiente</button>
+
+    <!--BOTÓN INICIO JUEGO -->
+    <button id="J1_inicio" onclick="Empezar()">COMENZAR</button>
+
+    <!--BOTÓN VOLVER A CASA -->
+    <a href="../index.html">
+      <button id="Casa">🏠︎</button>
+    </a>
+
+  </div>
+
+
+
+  <!----- JUEGO ----->
+  <div id="juegoBomba">
+    <img src="MULTIMEDIA/FOTOS/J1_bomba.png" id="BOMBACLA">
+
+    <img src="MULTIMEDIA/FOTOS/J1_pantCrono.gif" id="pantallaCrono">
+
+    <img src="MULTIMEDIA/FOTOS/J1_LEDoff.png" id="LED_Texto">
+    <img src="MULTIMEDIA/FOTOS/J1_LEDoff.png" id="LED_Timing">
+    <img src="MULTIMEDIA/FOTOS/J1_LEDoff.png" id="LED_4x4">
+
+     <!----- MANUAL ----->
+    <img src="MULTIMEDIA/FOTOS/J1_manual1.png" id="MANUAL">
+    <button id="botonMANUAL" onmouseover ="manualBoton(1)" onmouseout ="manualBoton(2)" onclick="paseMANUAL()">></button>
+    <p id="textoManual">Siguiente pág</p>
+    
+    <h4 id="cuentaAtras">00:000</h4> <!-- CUENTA ATRÁS -->
+
+
+
+    
+  <!----- MODULO 4x4 ----->
+    <!-- VECTORES -->
+    <p id="M1_1">-></p>
+    <p id="M1_2">-></p>
+    <p id="M1_3">-></p>
+    <p id="M1_4">-></p>
+    <p id="M1_5">-></p>
+    <p id="M1_6">-></p>
+    <p id="M1_7">-></p>
+    <p id="M1_8">-></p>
+    <p id="M1_9">-></p>
+    <p id="M1_10">-></p>
+    <p id="M1_11">-></p>
+    <p id="M1_12">-></p>
+    <p id="M1_13">-></p>
+    <p id="M1_14">-></p>
+    <p id="M1_15">-></p>
+    <p id="M1_16">-></p>
+
+    <!-- BOTONES -->
+    <button id="M1B_1" onclick="boton(1)">-></button>
+    <button id="M1B_2" onclick="boton(2)">-></button>
+    <button id="M1B_3" onclick="boton(3)">-></button>
+    <button id="M1B_4" onclick="boton(4)">-></button>
+    <button id="M1B_5" onclick="boton(5)">-></button>
+    <button id="M1B_6" onclick="boton(6)">-></button>
+    <button id="M1B_7" onclick="boton(7)">-></button>
+    <button id="M1B_8" onclick="boton(8)">-></button>
+    <button id="M1B_9" onclick="boton(9)">-></button>
+    <button id="M1B_10" onclick="boton(10)">-></button>
+    <button id="M1B_11" onclick="boton(11)">-></button>
+    <button id="M1B_12" onclick="boton(12)">-></button>
+    <button id="M1B_13" onclick="boton(13)">-></button>
+    <button id="M1B_14" onclick="boton(14)">-></button>
+    <button id="M1B_15" onclick="boton(15)">-></button>
+    <button id="M1B_16" onclick="boton(16)">-></button>
+
+    <!-- COMPARADOR -->
+    <div id="chapuza4x4">
+      <p id="vectoresTexto"></p>
+      <p id="botonesTexto"></p>
+      <p id="resultado4x4"></p>
+    </div>
+
+
+    
+  <!----- MODULO TIMING ----->
+    
+    <button id="verificarBoton"></button>
+    <p id="timingAleatorio">JEJE</p>
+
+
+    
+
+  <!----- MODULO TEXTO ----->
+  
+  <p id="textoAleatorio"></p>
+  <input type="text" id="textoInput">
+  <button id="botonTextoVerificar" onclick="verificarTexto()">Verificar</button>
+
+
+
+  <!----- POSIBLES FINALES ----->
+    
+  <img src="MULTIMEDIA/FOTOS/J1_Perder.png" id="BAD_ENDING">
+  <img src="MULTIMEDIA/FOTOS/J1_Ganar.png" id="GOOD_ENDING">
+  <img src="MULTIMEDIA/FOTOS/J1_pantallaNegro.png" id="BLACK_SCREEN">
+
+  <a href="../index.html">
+    <button id="Casa2">🏠︎</button>
+  </a>
+  </div>
+</body>
+
+</html>

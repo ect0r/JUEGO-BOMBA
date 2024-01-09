@@ -1,0 +1,445 @@
+body {
+  background-image: url("MULTIMEDIA/FOTOS/J1_fondo1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/*-- FUENTES --*/
+@font-face {
+  font-family: "a";
+  src: url("MULTIMEDIA/FUENTES/ParaLore.otf");
+}
+@font-face {
+  font-family: "LCD";
+  src: url("MULTIMEDIA/FUENTES/Virtual Pet Sans.otf");
+}
+
+/*----- CINEMATICA -----*/
+#cinematica {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#J1_boton1, #Casa {
+  z-index: 1;
+  background-color: #0f0f0f;
+  color: white;
+}
+#J1_boton1 {
+  position: absolute;
+  top: 90vh;
+  left: 88vw;
+  width: 10vw;
+  height: 7vh;
+  font-size: 3vh;
+  font-family: "a";
+}
+#Casa {
+  position: absolute;
+  top: 2vh;
+  left: 1.2vw;
+  width: 5vh;
+  height: 5vh;
+  font-size: 2vh;
+}
+#J1_inicio {
+  position: absolute;
+  top: 90vh;
+  left: 88vw;
+  width: 10vw;
+  height: 7vh;
+  background-color: #0f0f0f;
+  color: #EB2700;
+  font-family: "a";
+  font-size: 1.6vw;
+  opacity: 0;
+}
+
+#J1_inicio:hover {
+  transform: scale(1.1);
+  background-color: #EB2700;
+  color: black;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+  box-shadow: 0px 0px 45px rgba(235,39,0,1.000);
+}
+
+
+#J1_boton1:hover, #Casa:hover {
+  transform: scale(1.1);
+  background-color: #f0f0f0;
+  color: black;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+
+
+.fotoCinematica {
+  width: 55vw;
+  height: 55vh;
+  position: absolute;
+  top: 32vh;
+  left: 22vw;
+  opacity: 0;
+}
+
+#foto1 {
+  opacity: 1;
+}
+
+#textoCinematica {
+  width: 60vw;
+  height: 15.7vh;
+  font-size: 2.7vh;
+  color: white;
+  text-align: center;
+  transform: translate(32%, 7%);
+  font-family: "a";
+  padding: 4px;
+  background-color: #222222;
+  transition: color 1s ease-in-out;
+}
+
+
+
+
+/*----- JUEGO -----*/
+
+#juegoBomba {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* IMAGEN BOMBA */
+#BOMBACLA {
+  width: 65vw;
+  height: 80vh;
+  position: absolute;
+  top: 15vh;
+  left: 2vw;
+}
+
+/* PANTALLA FONDO CRONOMETRO */
+#pantallaCrono {
+  width: 11.3vw;
+  height: 12.3vh;
+  position: absolute;
+  top: 61.4vh;
+  left: 28.9vw;
+  z-index: 1;
+}
+
+/* TEXTO CRONOMETRO */
+#cuentaAtras {
+  font-family: "LCD";
+  font-size: 3.5vh;
+  font-stretch: condensed;
+  color: #ffffff;
+  position: absolute;
+  top: 60.6vh;
+  left: 30.8vw;
+  z-index: 2;
+}
+
+/* 3 LEDs */
+#LED_Texto, #LED_Timing, #LED_4x4 {
+  width: 5.15vh;
+  height: 5vh;
+  position: absolute;
+} #LED_Texto {
+  top: 76vh;
+  left: 29.2vw;
+} #LED_Timing {
+  top: 76vh;
+  left: 33.3vw;
+} #LED_4x4 {
+  top: 76vh;
+  left: 37.4vw;
+}
+
+/* MANUAL INSTRUCCIONES */
+#MANUAL {
+  position: absolute;
+  top: 15vh;
+  left: 70vw;
+  width: 27vw;
+  height: 75vh;
+}
+#botonMANUAL {
+  position: absolute;
+  top: 89.2vh;
+  left: 92.9vw;
+  width: 3vw;
+  height: 2vw;
+  z-index: 1;
+  background-color: #f3f1a7;
+  font-size: 2.5vh;
+  cursor: pointer;
+}
+#textoManual {
+  transition: opacity 0.35s ease-in-out;
+  font-family: "a";
+  font-size: 1.7vh;
+  position: absolute;
+  top: 87.9vh;
+  left: 85.8vw;
+  padding: 0.43vh;
+  background-color: #f3f1a7;
+  opacity: 0;
+}
+
+
+
+
+/*-- MODULO 4x4 --*/
+
+/* -- GENERAR VECTORES QUE REPLICAR -- */
+#M1_1, #M1_2, #M1_3, #M1_4, #M1_5, #M1_6, #M1_7, #M1_8, #M1_9, #M1_10, #M1_11, #M1_12, #M1_13, #M1_14, #M1_15, #M1_16{
+  font-family: "LCD";
+  font-size: 0.8vh;
+  color: #ffffff;
+  z-index: 1;
+  position: absolute;
+}
+
+#M1_1 {  /* FILA 1 */
+  top: 25.2vh;
+  left: 49.7vw;
+} #M1_2 {
+  top: 25.2vh;
+  left: 53.3vw;
+} #M1_3 {
+  top: 25.2vh;
+  left: 56.9vw;
+} #M1_4 {
+  top: 25.2vh;
+  left: 60.4vw;
+} #M1_5 {  /* FILA 2 */
+  top: 28.3vh;
+  left: 49.7vw;
+} #M1_6 {
+  top: 28.3vh;
+  left: 53.3vw;
+} #M1_7 {
+  top: 28.3vh;
+  left: 56.9vw;
+} #M1_8 {
+  top: 28.3vh;
+  left: 60.4vw;
+} #M1_9 {  /* FILA 3 */
+  top: 31.6vh;
+  left: 49.7vw;
+} #M1_10 {
+  top: 31.6vh;
+  left: 53.3vw;
+} #M1_11 {
+  top: 31.6vh;
+  left: 56.9vw;
+} #M1_12 {
+  top: 31.6vh;
+  left: 60.4vw;
+} #M1_13 {  /* FILA 4 */
+  top: 34.75vh;
+  left: 49.7vw;
+} #M1_14 {
+  top: 34.75vh;
+  left: 53.3vw;
+} #M1_15 {
+  top: 34.75vh;
+  left: 56.9vw;
+} #M1_16 {
+  top: 34.75vh;
+  left: 60.4vw;
+}
+/* -- GENERAR BOTONES -- */
+#M1B_1, #M1B_2, #M1B_3, #M1B_4, #M1B_5, #M1B_6, #M1B_7, #M1B_8, #M1B_9, #M1B_10, #M1B_11, #M1B_12, #M1B_13, #M1B_14, #M1B_15, #M1B_16 {
+  width: 2.5vh;
+  height: 2.5vh;
+  position: absolute;
+  padding: 0px;
+  font-family: "a";
+  background-color: #ffffff;
+  border: 0px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+#M1B_1 {  /* FILA 1 */
+  top: 38.8vh;
+  left: 52.35vw;
+} #M1B_2 {
+  top: 38.8vh;
+  left: 53.95vw;
+} #M1B_3 {
+  top: 38.8vh;
+  left: 55.55vw;
+} #M1B_4 {
+  top: 38.8vh;
+  left: 57.15vw;
+} #M1B_5 {  /* FILA 2 */
+  top: 41.8vh;
+  left: 52.35vw;
+} #M1B_6 {
+  top: 41.8vh;
+  left: 53.95vw;
+} #M1B_7 {
+  top: 41.8vh;
+  left: 55.55vw;
+} #M1B_8 {
+  top: 41.8vh;
+  left: 57.15vw;
+} #M1B_9 {  /* FILA 3 */
+  top: 44.8vh;
+  left: 52.35vw;
+} #M1B_10 {
+  top: 44.8vh;
+  left: 53.95vw;
+} #M1B_11 {
+  top: 44.8vh;
+  left: 55.55vw;
+} #M1B_12 {
+  top: 44.8vh;
+  left: 57.15vw;
+} #M1B_13 {  /* FILA 4 */
+  top: 47.8vh;
+  left: 52.35vw;
+} #M1B_14 {
+  top: 47.8vh;
+  left: 53.95vw;
+} #M1B_15 {
+  top: 47.8vh;
+  left: 55.55vw;
+} #M1B_16 {
+  top: 47.8vh;
+  left: 57.15vw;
+}
+
+
+
+#chapuza4x4 {
+  display: none;
+}
+#vectoresTexto {
+  font-size: 3vh;
+  position: absolute;
+  top: 7vh;
+  left: 10vw;
+  color: white;
+} #botonesTexto {
+  font-size: 3vh;
+  position: absolute;
+  top: 3vh;
+  left: 10vw;
+  color: #e11919;
+} #resultado4x4 {
+  font-size: 3vh;
+  position: absolute;
+  top: 0vh;
+  left: 10.3vw;
+  color: #1926e1;
+}
+
+
+
+
+/*-- MODULO TIMING --*/
+
+/* BOTON */
+#verificarBoton {
+  z-index: 1;
+  font-size: 3vh;
+  font-family: "a";
+  color: white;
+  background-color: red;
+  width: 8vw;
+  height: 6.5vh;
+  position: absolute;
+  top: 43vh;
+  left: 30.7vw;
+  cursor: pointer;
+}
+
+/* TEXTO PALABRA ALEATORIA */
+#timingAleatorio {
+  position: absolute;
+  top: 30vh;
+  left: 31.3vw;
+  z-index: 1;
+  font-family: "LCD";
+  font-size: 3.5vh;
+  color: white;
+}
+
+
+
+/*-- MODULO TEXTO --*/
+#textoAleatorio {
+  color: white;
+  user-select: none;   NO COPIABLE */
+  z-index: 1;
+  position: absolute;
+  top: 63vh;
+  left: 7.15vw;
+  background-color: #393939;
+  font-family: "a";
+  font-size: 1.7vh;
+  width: 13vw;
+  height: 3vh;
+  text-align: center;
+  border: 0.33vh solid #000000;
+}
+
+#botonTextoVerificar {
+  z-index: 1;
+  cursor: pointer;
+  width: 5.5vw;
+  height: 3.5vh;
+  position: absolute;
+  top: 75.5vh;
+  left: 11.4vw;
+  background-color: #43D143;
+  font-family: "a";
+  font-size: 2vh;
+}
+
+#textoInput {
+  width: 13vw;
+  height: 2vh;
+  z-index: 1;
+  position: absolute;
+  top: 72vh;
+  left: 7.15vw;
+  background-color: #393939;
+  color: white;
+  font-family: "a";
+  text-align: center;
+}
+
+
+/*-- FINALES --*/
+
+#Casa2 {
+  position: absolute;
+  top: 2vh;
+  left: 1.2vw;
+  width: 5vh;
+  height: 5vh;
+  font-size: 2vh;
+  opacity: 0;
+  transition: opacity 3s ease-in;
+}
+#BAD_ENDING, #GOOD_ENDING, #BLACK_SCREEN {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0vh;
+  left: 0vw;
+  z-index: 2;
+  display: none;
+  transition: opacity 3s ease-out;
+  opacity: 0;
+} #BLACK_SCREEN {
+  z-index: 1;
+  transition: opacity 1s ease-in;
+}
